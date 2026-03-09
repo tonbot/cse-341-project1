@@ -1,0 +1,15 @@
+
+### Get all users
+GET https://cse-341-project1-n5gz.onrender.com/users
+Content-Type: application/json
+
+
+### Get single user
+GET https://cse-341-project1-n5gz.onrender.com/users/69aeb7b89bf1ee9843f8bf06
+Content-Type: application/json
+
+
+
+
+
+
