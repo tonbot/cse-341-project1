@@ -1,11 +1,12 @@
-const swaggerAutogen = require('swagger-autogen')();
+const swaggerAutogen = require('swagger-autogen')({
+  openapi: '3.0.0'
+});
 
 const port = process.env.PORT || 3000;
 const publishedApiUrl =
   process.env.PUBLIC_API_URL || 'https://cse-341-project1-n5gz.onrender.com';
 
 const doc = {
-  openapi: '3.0.0',
   info: {
     title: 'CSE 341 Project 1 API',
     version: '1.0.0',
@@ -55,6 +56,6 @@ const doc = {
 };
 
 const outputFile = './swagger-output.json';
-const endpointsFiles = ['./routes/index.js', './routes/users.js'];
+const endpointsFiles = ['./routes/index.js'];
 
 swaggerAutogen(outputFile, endpointsFiles, doc);
