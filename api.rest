@@ -1,15 +1,56 @@
+@baseUrl = http://localhost:3000
+@publishedBaseUrl = https://cse-341-project1-n5gz.onrender.com
+@userId = 69b5792211affd2f6de4f19
 
 ### Get all users
-GET https://cse-341-project1-n5gz.onrender.com/users
+GET {{baseUrl}}/users
 Content-Type: application/json
 
 
 ### Get single user
-GET https://cse-341-project1-n5gz.onrender.com/users/69aeb7b89bf1ee9843f8bf06
+GET {{baseUrl}}/users/{{userId}}
 Content-Type: application/json
 
+### Create user
+POST {{baseUrl}}/users
+Content-Type: application/json
 
+{
+  "firstName": "Toyin",
+  "lastName": "Ajiboye",
+  "email": "toyin@example.com",
+  "favoriteColor": "blue",
+  "birthday": "1998-10-21"
+}
 
+### Update user
+PUT {{baseUrl}}/users/{{userId}}
+Content-Type: application/json
 
+{
+  "firstName": "Toyin",
+  "lastName": "Ajiboye",
+  "email": "updated.toyin@example.com",
+  "favoriteColor": "green",
+  "birthday": "1998-10-21"
+}
 
+### Delete user
+DELETE {{baseUrl}}/users/{{userId}}
+Content-Type: application/json
 
+### Local Swagger UI
+GET {{baseUrl}}/api-docs
+Content-Type: application/json
+
+### Local Swagger JSON
+GET {{baseUrl}}/api-docs.json
+Content-Type: application/json
+
+### Published Swagger UI
+GET {{publishedBaseUrl}}/api-docs
+Content-Type: application/json
+
+### Published Swagger JSON
+GET {{publishedBaseUrl}}/api-docs.json
+Content-Type: application/json
